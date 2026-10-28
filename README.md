@@ -59,18 +59,18 @@
 | `.gitignore` | Gitを使う場合に、パスワードや自動生成物を記録しないための設定 |
 | `README.md` | この説明書。アプリのプログラムからは読み込まれない |
 
-ここから下は初回準備と授業中の確認手順です。
+ここから下は初回準備とレクチャー中の確認手順です。
 
-## 授業前の準備（共通）
+## レクチャー前の準備（共通）
 
 1. VS CodeとNode.jsを用意します。この教材のVite 7にはNode.js 20.19以上または22.12以上が必要です（[Viteの要件](https://v7.vite.dev/guide/)）。
 2. このフォルダを開き、ターミナルで`npm install`を実行します。これで`node_modules`という自動生成フォルダができます。教材の配布ファイルには含めていません。
-3. MySQL Community Server **8.4 LTS**のインストーラーをダウンロードします。MySQLのインストールと表の作成は授業中に行います。既にMySQLが入っている場合は、再インストールする前に接続できるか確認してください。
+3. MySQL Community Server **8.4 LTS**のインストーラーをダウンロードします。MySQLのインストールと表の作成はレクチャー中に行います。既にMySQLが入っている場合は、再インストールする前に接続できるか確認してください。
 
 ### Windowsの場合
 
 - [MySQL公式ダウンロードページ](https://dev.mysql.com/downloads/mysql/8.4.html?os=3)でWindows用の**MSI**を選びます。インストールには管理者権限が必要です。Visual C++再頒布パッケージの要件も[公式手順](https://dev.mysql.com/doc/refman/8.4/en/windows-installation.html)で確認します。
-- 授業中にMSIを実行し、続いてMySQL Configuratorで初期設定をします。`Type and Networking`では`Development`、TCP/IPポート`3306`を選びます。同じPCから使うため、外部接続用のファイアウォール開放は不要です（[Configuratorの説明](https://dev.mysql.com/doc/refman/8.4/en/mysql-configurator-workflow-server.html)）。rootパスワードを入力する場所は下の「rootパスワードを決める」を参照してください。
+- レクチャー中にMSIを実行し、続いてMySQL Configuratorで初期設定をします。`Type and Networking`では`Development`、TCP/IPポート`3306`を選びます。同じPCから使うため、外部接続用のファイアウォール開放は不要です（[Configuratorの説明](https://dev.mysql.com/doc/refman/8.4/en/mysql-configurator-workflow-server.html)）。rootパスワードを入力する場所は下の「rootパスワードを決める」を参照してください。
 - VS CodeのPowerShellから接続します。インストール先を変更した場合はパスを読み替えてください。パスワードは`-p`の後に直接書かず、表示された入力欄へ入れます。
 
 ```powershell
@@ -80,7 +80,7 @@
 ### Macの場合
 
 - [MySQL公式ダウンロードページ](https://dev.mysql.com/downloads/mysql/)で8.4 LTSを選び、Macの種類に合う**DMG**をダウンロードします。Apple SiliconはARM、Intel Macはx86です。インストールには管理者権限が必要です。
-- 授業中にDMGを開いて中のパッケージを実行します。rootパスワードは**ファイルのインストールが終わった後**の設定画面で入力します。手順は下の「rootパスワードを決める」を参照してください（[macOS向け公式手順](https://dev.mysql.com/doc/refman/8.4/en/macos-installation-pkg.html)）。
+- レクチャー中にDMGを開いて中のパッケージを実行します。rootパスワードは**ファイルのインストールが終わった後**の設定画面で入力します。手順は下の「rootパスワードを決める」を参照してください（[macOS向け公式手順](https://dev.mysql.com/doc/refman/8.4/en/macos-installation-pkg.html)）。
 - ターミナルから接続します。公式パッケージの標準的なインストール先を使ったコマンドです。
 
 ```bash
@@ -108,7 +108,7 @@
 
 すでにMySQLをインストールしてある場合、rootパスワードは設定済みの可能性があります。まず上のコマンドでログインを試してください。忘れてログインできない場合は、新規インストールの手順では変更できません。[MySQL公式の再設定手順](https://dev.mysql.com/doc/refman/8.4/en/resetting-permissions.html)を使うため、既存のデータを消す再インストールはしないでください。
 
-## 授業中：表を作り、SQLを試す
+## レクチャー中：表を作り、SQLを試す
 
 MySQLへの接続後、`mysql>`が表示されたら[setup.sql](./setup.sql)の内容を貼り付けて実行します。続けて自分で次を打ちます。
 
@@ -117,9 +117,9 @@ INSERT INTO tasks (title) VALUES ('ナレーション原稿を確認');
 SELECT id, title FROM tasks ORDER BY id;
 ```
 
-`INSERT`は書き込み、`SELECT`は取得です。`id`はMySQLが自動で付けます。授業では後でSQLの確認をするため、この操作用ターミナルを開いたままにします。アプリを使うだけなら閉じても構いません。MySQLサーバー自体は起動したままにします。
+`INSERT`は書き込み、`SELECT`は取得です。`id`はMySQLが自動で付けます。レクチャーでは後でSQLの確認をするため、この操作用ターミナルを開いたままにします。アプリを使うだけなら閉じても構いません。MySQLサーバー自体は起動したままにします。
 
-## 授業中：画面を起動する
+## レクチャー中：画面を起動する
 
 初回だけ、このフォルダで`.env.example`を`.env`にコピーします。設定済みの`.env`がある場合はコピー不要です。
 
@@ -160,4 +160,4 @@ cp .env.example .env
 | `Unknown database`または`Table ... doesn't exist` | `setup.sql`を実行したか |
 | ブラウザで取得できない | MySQLが起動しているか、`npm run server`が動いているか |
 
-授業では理解しやすさのため、ローカルPCのrootユーザーで接続します。実務では権限を絞った専用ユーザーを作ります。
+レクチャーでは理解しやすさのため、ローカルPCのrootユーザーで接続します。実務では権限を絞った専用ユーザーを作ります。
