@@ -1,4 +1,5 @@
--- このファイルは最初に一度実行する。既存のタスクは消さない。
+-- MySQLにデータベースとtasks表を作る初回準備用のSQL。
+-- 最初に一度実行する。既存のタスクは消さず、毎回のアプリ起動では実行しない。
 CREATE DATABASE IF NOT EXISTS se_task_lesson CHARACTER SET utf8mb4;
 USE se_task_lesson;
 

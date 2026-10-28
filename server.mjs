@@ -1,3 +1,5 @@
+// Node.jsで動くサーバー側のプログラム。画面からの取得・追加の依頼に応じてSQLでMySQLを読み書きする。
+// npm run serverで起動し、.envの接続情報を使って、処理結果をJSONで画面へ返す。
 import 'dotenv/config';
 import express from 'express';
 import mysql from 'mysql2/promise';

@@ -1,3 +1,5 @@
+/* 画面の見た目を決めるCSS。文字・色・余白・配置や、読み込み・保存中のボタンの見た目を指定する。
+   src/main.jsxから読み込まれ、小さい画面向けの余白調整も行う。 */
 body { margin: 0; font-family: system-ui, sans-serif; color: #20242b; background: #f7f8fa; }
 main { max-width: 680px; margin: 40px auto; padding: 24px; background: white; border: 1px solid #dfe3e8; border-radius: 10px; }
 h1 { margin-top: 0; font-size: 26px; }

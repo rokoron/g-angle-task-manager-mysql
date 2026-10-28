@@ -1,3 +1,5 @@
+// Viteの開発サーバーの設定。画面を開くアドレスとポートを決める。
+// /apiへの依頼をserver.mjsのAPIへ中継する。npm run devでViteが読み込む。
 import { defineConfig } from 'vite';
 
 export default defineConfig({

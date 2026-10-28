@@ -1,3 +1,5 @@
+// ブラウザで動くReactの画面。タスク一覧・入力欄・ボタンと、その操作を担当する。
+// 取得・追加はfetchでserver.mjsのAPIに依頼し、返されたデータを画面に反映する。
 import React, { useEffect, useState } from 'react';
 
 export default function App() {
